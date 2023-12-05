@@ -60,7 +60,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 - Using the setup script:
 
-    This method is preferred as it preconfigured to support [running rollapps locally](https://github.com/dymensionxyz/roller)
+    This method is preferred as it is preconfigured to support [running rollapps locally](https://github.com/dymensionxyz/roller)
 
     ```sh
     bash scripts/setup_local.sh
@@ -106,7 +106,7 @@ sh scripts/pools/pools_bootstrap.sh
 
 ## Adding incentives
 
-### Creating incentives streams
+### Creating incentive streams
 
 After creating the pools above, we create 2 incentive streams through gov:
 
