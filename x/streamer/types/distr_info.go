@@ -33,7 +33,7 @@ func (d DistrInfo) Validate() error {
 	return nil
 }
 
-// ValidateBasic is a basic validation test on recordd distribution gauges' weights.
+// ValidateBasic is a basic validation test on record distribution gauges' weights.
 func (r DistrRecord) ValidateBasic() error {
 	if r.Weight.IsNegative() {
 		return ErrDistrRecordNotPositiveWeight
