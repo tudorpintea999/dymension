@@ -37,7 +37,7 @@ func (im IBCMiddleware) FinalizeRollappPackets(ctx sdk.Context, rollappID string
 		im.keeper.UpdateRollappPacketStatus(ctx, rollappID, rollappPacket, types.RollappPacket_ACCEPTED)
 		// Call the onRecvPacket callback for each packet
 		ack := im.app.OnRecvPacket(ctx, *rollappPacket.Packet, rollappPacket.Relayer)
-		// Write the acknowledgement to the chain only if it is synchronous
+		// Write the acknowledgment to the chain only if it is synchronous
 		if ack != nil {
 			_, chanCap, err := im.keeper.LookupModuleByChannel(ctx, rollappPacket.Packet.DestinationPort, rollappPacket.Packet.DestinationChannel)
 			if err != nil {
@@ -46,7 +46,7 @@ func (im IBCMiddleware) FinalizeRollappPackets(ctx sdk.Context, rollappID string
 			}
 			err = im.keeper.WriteAcknowledgement(ctx, chanCap, rollappPacket.Packet, ack)
 			if err != nil {
-				logger.Error("Error writing acknowledgement", "rollappID", rollappID, "sequence", rollappPacket.Packet.GetSequence(), "destination channel", rollappPacket.Packet.GetDestChannel(), "error", err.Error())
+				logger.Error("Error writing acknowledgment", "rollappID", rollappID, "sequence", rollappPacket.Packet.GetSequence(), "destination channel", rollappPacket.Packet.GetDestChannel(), "error", err.Error())
 				continue
 			}
 
