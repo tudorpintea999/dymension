@@ -127,7 +127,7 @@ func (k Keeper) SendPacket(
 }
 
 // WriteAcknowledgement wraps IBC ICS4Wrapper WriteAcknowledgement function.
-// ICS29 WriteAcknowledgement is used for asynchronous acknowledgements.
+// ICS29 WriteAcknowledgement is used for asynchronous acknowledgments.
 func (k *Keeper) WriteAcknowledgement(ctx sdk.Context, chanCap *capabilitytypes.Capability, packet exported.PacketI, acknowledgement exported.Acknowledgement) error {
 	return k.ics4Wrapper.WriteAcknowledgement(ctx, chanCap, packet, acknowledgement)
 }
